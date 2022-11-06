@@ -1,0 +1,31 @@
+{
+  "module": "commonjs",
+  "main": "dist/bundle.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "serve": "browserify lib/index.js -o dist/bundle.js",
+    "test": "browserify lib/index.ts -p [tsify --noImplicitAny] > dist/bundle.js",
+    "dev": "browserify lib/index.ts -p [tsify --noImplicitAny] > dist/bundle.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@types/browserify": "^12.0.37",
+    "@types/lodash": "^4.14.187",
+    "@types/uniq": "^0.0.27",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "lodash": "^4.17.21",
+    "tsify": "^5.0.4"
+  },
+  "dependencies": {
+    "typescript": "^4.8.4",
+    "uniq": "^1.0.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
